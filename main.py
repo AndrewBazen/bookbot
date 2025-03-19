@@ -1,4 +1,5 @@
 from stats import count_words, count_characters
+import sys
 
 def print_report(file, word_count, char_counts):
     print(f"--- Begin report of {file} ---")
@@ -11,11 +12,14 @@ def print_report(file, word_count, char_counts):
 
 
 def main():
-    with open("books/frankenstein.txt") as f:
+    if sys.argv != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    with open(sys.argv[1]) as f:
         file_contents = f.read()
         word_count = count_words(file_contents)
         char_counts = count_characters(file_contents)
-        print_report("books/frankenstein.txt", word_count, char_counts)
+        print_report(sys.argv[1], word_count, char_counts)
         
 
 if __name__ == "__main__":
