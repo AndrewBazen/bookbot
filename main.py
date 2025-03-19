@@ -12,7 +12,7 @@ def print_report(file, word_count, char_counts):
 
 
 def main():
-    if sys.argv != 2:
+    if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
     with open(sys.argv[1]) as f:
