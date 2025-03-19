@@ -6,7 +6,7 @@ def print_report(file, word_count, char_counts):
     print(f"{word_count} words found in the document\n\n")
     for char, count in char_counts.items():
         if char.isalpha():
-            print(f"The '{char}' character was found {count} times\n")
+            print(f"{char}: {count}\n")
     print(f"--- End report ---")
 
 
